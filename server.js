@@ -9,7 +9,7 @@ const   port        = process.env.port || 2212,
         Article     = require("./models/article"),
         Comment     = require("./models/comment");
 
-mongoose.connect("mongodb://localhost/gaharu_db_v2", {useNewUrlParser: true});
+mongoose.connect("mongodb://foldram:foldram123@ds159025.mlab.com:59025/gaharu-residence2", {useNewUrlParser: true});
 app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({extended: true}));
 
