@@ -1,0 +1,21 @@
+<% include ./partials/header %>
+<div class="container">
+    <div class="row">
+    <h1 style="text-align:center; margin-top : 50px">  Add New Comment to <%= article.name %> </h1>
+        <div style="width: 30%; margin: 25px auto">
+            <form method="POST" action="/ProfileGaharu/<%= article._id %>/comments">
+                <div>
+                <input class="form-control" type="text" name="author"  placeholder="Author">    
+                </div>
+                <div>
+                <input class="form-control" type="text" name="author"  placeholder="Text">    
+                </div>
+                <div>
+                <input class="btn btn-lg btn-primary btn-block" type="submit">    
+                </div>
+                
+            </form>
+        </div>
+    </div>
+</div>    
+<% include ./partials/footer %>

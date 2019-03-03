@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Theme Made By www.w3schools.com - No Copyright -->
+  <title>Gaharu Residence</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+  <link href="/stylesheet/css/style.css" rel="stylesheet" type="text/css">
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  </style>
+</head>
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header" style="height: 100">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="/">Gaharu Residence</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+          <li><a href="/HomeGaharu">HOME</a></li>
+        <li><a  data-toggle="modal" data-target="#myModal">CONTACT</a></li>
+        <li><a href="/ProfileGaharu">VR-MODE</a></li>
+        <% if(!currentUser){ %>
+          <li><a href="/login" class="btn-success">LOGIN</a></li>
+          <% } else { %>
+            <li><a href="/login" class="btn-success">LOGOUT</a></li>
+            <li><a href="#" style="disable" class="btn-deffault"><%= currentUser.username %></a></li>
+          <% } %>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Modal -->
+<div style="margin-top: 100px" class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+      <div class="modal-header"> <!-- buka modal-header -->
+        <h2 style="text-align: center" class="modal-title" id="exampleModalLabel">CONTACT FORM:</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+        </button>
+      </div> <!-- tutup modal-header -->
+      <div class="modal-body"> <!-- buka modal-body -->
+        <form action="/bookingAct" method="POST">
+        <div class="form-group">
+          <label for="recipient-name" class="col-form-label">Full Name:</label>
+          <input type="text" class="form-control" name="nameUser" required>
+        </div>
+        <div class="form-group">
+          <label for="recipient-name" class="col-form-label">Email:</label>
+          <input type="email" class="form-control" name="emailUser" required>
+        </div>
+        <div class="form-group">
+          <label for="message-text" class="col-form-label">Message:</label>
+          <textarea class="form-control" name="messageUser" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Send message</button>
+        </form>
+       </div>
+      </div> <!-- tutup modal-content -->
+    </div> <!-- tutup modal-dialog -->
+  </div> <!-- tutup modal-fade -->
+
+

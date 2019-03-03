@@ -1,0 +1,15 @@
+<% include ./partials/header %>
+
+<h1><%= foundArticles.name %></h1>
+
+<p><%= foundArticles.title %></p>
+<p>
+  <a href="/ProfileGaharu/<%= foundArticles._id %>/comments/new">Add New Comment</a>
+</p>
+<br>
+<% foundArticles.comments.forEach(function(comment){ %>
+    <p>
+        <strong> <%= comment.author %> </strong> - <% comment.text %></p>
+<% }); %>
+
+<% include ./partials/footer %>

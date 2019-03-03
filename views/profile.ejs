@@ -1,0 +1,125 @@
+<!--HEADER-->
+<% include ./partials/header %>
+<!-- HEADER CLOSE -->
+<div class="container-fluid">
+   
+
+<!-- VR SECTON START-->
+<div id="vrmode" class="container text-center bg-grey">
+    <h2>VIRTUAL-REALITY SECTION</h2>
+    <a href="/VrtourGaharu" class="btn btn-default btn-lg" target="_blank">Klik disini untuk masuk mode <strong><u>VR</u></strong></a><br><br>
+    <div class="row text-center slideanim">
+      <div class="col-sm-3">
+        <div class="thumbnail">
+          <img src="/stylesheet/image/gr1.jpg" alt="Paris" width="400" height="300">
+          <p><strong>Halaman Depan Rumah</strong></p>
+          <p>Gaharu Residence</p>
+        </div>
+      </div>
+      <div class="col-sm-3">
+        <div class="thumbnail">
+          <img src="/stylesheet/image/gr2.jpg" alt="New York" width="400" height="300">
+          <p><strong>Bagian Depan Rumah</strong></p>
+          <p>Gaharu Residence</p>
+        </div>
+      </div>
+      <div class="col-sm-3">
+        <div class="thumbnail">
+          <img src="/stylesheet/image/gr3.jpg" alt="San Francisco" width="400" height="300">
+          <p><strong>Ruang Tamu</strong></p>
+          <p>Gaharu Residence</p>
+        </div>
+      </div>
+    <div class="col-sm-3">
+        <div class="thumbnail">
+          <img src="/stylesheet/image/gr4.jpg" alt="San Francisco" width="400" height="300">
+          <p><strong>Ruang Dapur</strong></p>
+          <p>Gaharu Residence</p>
+        </div>
+      </div>
+    </DIV>
+    <div class="row slideanim">
+    <div class="col-sm-3">
+        <div class="thumbnail">
+          <img src="/stylesheet/image/gr5.jpg" alt="San Francisco" width="400" height="300">
+          <p><strong>Kamar Tidur 1</strong></p>
+          <p>Gaharu Residence</p>
+        </div>
+      </div>
+      <div class="col-sm-3">
+          <div class="thumbnail">
+            <img src="/stylesheet/image/gr6.jpg" alt="San Francisco" width="400" height="300">
+            <p><strong>Kamar Tidur 2</strong></p>
+          <p>Gaharu Residence</p>
+          </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="thumbnail">
+              <img src="/stylesheet/image/gr7.jpg" alt="San Francisco" width="400" height="300">
+              <p><strong>kamar Mandi & Toilet</strong></p>
+              <p>Gaharu Residence</p>
+            </div>
+          </div>
+          <div class="col-sm-3">
+              <div class="thumbnail">
+                <img src="/stylesheet/image/gr8.jpg" alt="San Francisco" width="400" height="300">
+                <p><strong>Bagian Belakang Rumah</strong></p>
+                <p>Gaharu Residence</p>
+              </div>
+            </div>
+    </div>
+</div>
+
+<!-- VR SECTION END-->
+
+<br>
+<div class="container text-center">
+    <a  data-toggle="modal" data-target="#articleModal" class="btn btn-lg btn-success">ADD COMMENT</a>
+</div>
+
+<br>
+<div style="margin-top: 100px" class="modal fade" id="articleModal" tabindex="-1" role="dialog" aria-labelledby="articleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+    <div class="modal-header"> <!-- buka modal-header -->
+      <h2 style="text-align: center" class="modal-title" id="exampleModalLabel">Post Comment:</h5>
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+      </button>
+    </div> <!-- tutup modal-header -->
+    <div class="modal-body"> <!-- buka modal-body -->
+      <form action="/ProfileGaharu" method="POST">
+      <div class="form-group">
+        <label for="recipient-name" class="col-form-label">Nama:</label>
+        <input type="text" class="form-control" name="namePost" required>
+      </div>
+      <div class="form-group">
+        <label for="message-text" class="col-form-label">Comment:</label>
+        <textarea class="form-control" name="titlePost" required></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary">Post</button>
+      </form>
+    </div>
+
+    </div> <!-- tutup modal-content -->
+  </div> <!-- tutup modal-dialog -->
+</div> <!-- tutup modal-fade -->
+
+<div class="container-fluid text-center bg-grey" style="overflow:auto; border:1px solid grey; border-radius:10px; padding:1%; margin-left:1%; " >
+  <DIV class="row" style="display: flex; flex-wrap: wrap;"> 
+    <% article.forEach(function(article) { %>
+      <div class="col-md-3 col-sm-6 text-center">
+        <div class="thumbnail">
+          <h3><%= article.name%></h3>
+          <div class="option">
+            <p><%= article.title%></p>
+          </div>
+          <!-- <a href="/ProfileGaharu/<%= article._id %>" class="btn btn-default">Show</a> -->
+        </div>
+      </div>
+  <% }) %>
+  </DIV>
+</div>
+
+
+<% include ./partials/footer %>
